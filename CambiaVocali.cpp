@@ -34,8 +34,6 @@ public:
     void inserisci(Nodo* precedente, char val);
     void inserisci_in_coda(char val);
     void mod_val2(Nodo* puntato, char voc);
-    //void stampaVal(char val);
-    void stampaCRP(string S1);
 
     Nodo* ricerca(char val);
     void rimuovi(char val);
@@ -154,10 +152,6 @@ void Lista::rimuovi(char val){
 
 void Lista::mod_val2(Nodo* puntato, char voc){
     puntato->vocale2=voc;
-}
-
-void Lista::stampaCRP(string S1){
-
 }
 
 int main(){
