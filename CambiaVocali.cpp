@@ -54,10 +54,6 @@ Lista::~Lista(){
 ostream& operator<<(ostream& out, const Lista& ls){
     Nodo* iter=ls.testa; //get testa
     while(iter!=nullptr){
-        /*if(iter->prec==nullptr)
-            out << "NULL <-- ";
-        else
-            out << iter->prec->vocale << " <-- ";*/
         out << iter->vocale << ":" << iter->vocale2<<" --> ";
         iter = iter->succ;
     }
@@ -90,8 +86,6 @@ void Lista::inserisci_in_coda(char val){
     if(this->testa == nullptr){
         inserisci(val);
         return;
-        /*nuovo->succ = nullptr;
-        this->testa = nuovo;*/
     }
 
     Nodo* nuovo = new Nodo;
