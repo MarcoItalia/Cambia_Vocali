@@ -12,7 +12,15 @@ public:
     char vocale2;
     Nodo* succ;
     Nodo* prec;
+
+    friend ostream& operator<<(ostream& out, const Nodo& nd);
 };
+
+ostream& operator<<(ostream& out, const Nodo& nd){
+    char val=nd.vocale2;
+    out<<val;
+    return out;
+}
 
 class Lista{
 Nodo* testa;
@@ -26,6 +34,7 @@ public:
     void inserisci(Nodo* precedente, char val);
     void inserisci_in_coda(char val);
     void mod_val2(Nodo* puntato, char voc);
+    //void stampaVal(char val);
     void stampaCRP(string S1);
 
     Nodo* ricerca(char val);
@@ -163,7 +172,7 @@ int main(){
     lista.inserisci('e');
     lista.inserisci('a');
 
-    for(int task=0;task<1;task++){
+    for(int task=0;task<100;task++){
         for(int vi=0;vi<5;vi++){
             in>>S;
 
@@ -172,10 +181,14 @@ int main(){
         }
         getline(in,S);
         S=S.substr(1);
-        cout<<S<<endl;
-
+        for(int i=0;i<S.length();i++){
+            p=lista.ricerca(S[i]);
+            if(p)
+                out<<*p;
+            else out<<S[i];
+        }
+        out<<endl;
     }
-    cout<<lista;
 
 
 return 0;
